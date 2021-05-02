@@ -69,18 +69,18 @@ public class UserRepositoryTest {
 		public void testUpdateUserRoles() {
 			
 			Role roleSalesperson = entityManager.find(Role.class, 2);
-			User userMike = repo.findById(52).get();
+			User userMike = repo.findById(2).get();
 		
 			userMike.addRole(roleSalesperson);
 			repo.save(userMike);
 		}
 		
-		@Test
-		public void testDeleteUser() {
-			Integer userId = 52;
-			repo.deleteById(userId);
-		}
-		
+//		@Test
+//		public void testDeleteUser() {
+//			Integer userId = 22;
+//			repo.deleteById(userId);
+//		}
+//		
 //		@Test
 //		public void testCountById() {
 //			Integer id = 52;
