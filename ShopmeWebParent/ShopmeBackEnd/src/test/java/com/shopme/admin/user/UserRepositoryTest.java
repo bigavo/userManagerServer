@@ -50,16 +50,16 @@ public class UserRepositoryTest {
 			listUsers.forEach(user -> System.out.println(user));
 		}
 		
-		@Test
-		public void GetUserById() {
-			User userTrinh = repo.findById(2).get();
-			System.out.println(userTrinh);
-			assertThat(userTrinh).isNotNull();
-		}
+//		@Test
+//		public void GetUserById() {
+//			User userTrinh = repo.findById(52).get();
+//			System.out.println(userTrinh);
+//			assertThat(userTrinh).isNotNull();
+//		}
 		
 		@Test
 		public void testUpdateUserDetails() {
-			User userTrinh = repo.findById(2).get();
+			User userTrinh = repo.findById(52).get();
 			userTrinh.setEnabled(true);
 			userTrinh.setEmail("trinh.springboot@gmail.com");
 			repo.save(userTrinh);
@@ -67,27 +67,27 @@ public class UserRepositoryTest {
 		
 		@Test
 		public void testUpdateUserRoles() {
-			Role roleEditor = entityManager.find(Role.class, 3);
+			
 			Role roleSalesperson = entityManager.find(Role.class, 2);
-			User userRavi = repo.findById(2).get();
-			userRavi.getRoles().remove(roleEditor);
-			userRavi.addRole(roleSalesperson);
-			repo.save(userRavi);
+			User userMike = repo.findById(52).get();
+		
+			userMike.addRole(roleSalesperson);
+			repo.save(userMike);
 		}
 		
 		@Test
 		public void testDeleteUser() {
-			Integer userId = 22;
+			Integer userId = 52;
 			repo.deleteById(userId);
 		}
 		
-		@Test
-		public void testCountById() {
-			Integer id = 1;
-			Long countById = repo.countById(id);
-			
-			assertThat(countById).isNotNull().isGreaterThan(0);
-		}
+//		@Test
+//		public void testCountById() {
+//			Integer id = 52;
+//			Long countById = repo.countById(id);
+//			
+//			assertThat(countById).isNotNull().isGreaterThan(0);
+//		}
 		
 		
 		
