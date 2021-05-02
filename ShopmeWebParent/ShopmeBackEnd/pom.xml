@@ -15,6 +15,13 @@
 	<description>Shopme Admin Project</description>
 	<properties>
 		<java.version>8</java.version>
+	
+		  <project.build.sourceEncoding>
+		      UTF-8
+		  </project.build.sourceEncoding>
+		  <maven.compiler.target>1.8</maven.compiler.target>
+		  <maven.compiler.source>1.8</maven.compiler.source>
+
 	</properties>
 	
 	<dependencies>
@@ -40,6 +47,7 @@
 			        <target>1.8</target>
 		      </configuration>
     		</plugin> 
+    		
 			
 		</plugins>
 	</build>
